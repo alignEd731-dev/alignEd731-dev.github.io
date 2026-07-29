@@ -1,79 +1,246 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
-    <style>
-        /* Minimal styling to clean up default margins */
-        body {
-            font-family: sans-serif;
-            margin: 0;
-            padding: 0;
-            line-height: 1.6;
-        }
-        header, nav, main, footer {
-            padding: 1rem;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        nav a {
-            margin-right: 15px;
-            text-decoration: none;
-            color: #0076d6;
-        }
-        footer {
-            border-top: 1px solid #ccc;
-            margin-top: 2rem;
-            text-align: center;
-            font-size: 0.9rem;
-        }
-    </style>
-</head>
-<body>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ALIGNED | Your Education Perfectly Aligned</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
 
-    <header>
-        <h1>Alex Developer</h1>
-        <p>Frontend Developer & Designer</p>
-    </header>
+  <style>
+    /* --- CSS Variables (Color Palette from Logo) --- */
+    :root {
+      --primary-blue: #1D528A;
+      --accent-coral: #FF6E51;
+      --soft-peach: #FAD5CA;
+      --charcoal: #33373A;
+      --light-gray: #F8F9FA;
+      --white: #FFFFFF;
+      --font-heading: 'Oswald', sans-serif;
+      --font-body: 'Inter', sans-serif;
+    }
 
-    <nav>
-        <a href="#about">About</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
-    </nav>
+    /* --- Reset & Base Styles --- */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-    <main>
-        <section id="about">
-            <h2>About Me</h2>
-            <p>Hi there! I'm a passionate web developer who loves building clean, functional, and user-friendly websites. Welcome to my digital space.</p>
-        </section>
+    body {
+      font-family: var(--font-body);
+      color: var(--charcoal);
+      background-color: var(--white);
+      line-height: 1.6;
+    }
 
-        <hr>
+    h1, h2, h3, .logo-text {
+      font-family: var(--font-heading);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 0.5rem;
+    }
 
-        <section id="projects">
-            <h2>My Projects</h2>
-            <article>
-                <h3>Project One: E-Commerce Redesign</h3>
-                <p>A complete redesign of a local shop's website, focusing on mobile responsiveness and speed.</p>
-            </article>
-            <article>
-                <h3>Project Two: Weather App</h3>
-                <p>A simple JavaScript application that fetches real-time weather data using a public API.</p>
-            </article>
-        </section>
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
 
-        <hr>
+    /* --- Navigation / Header --- */
+    header {
+      background-color: var(--white);
+      border-bottom: 1px solid #EEEEEE;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
 
-        <section id="contact">
-            <h2>Get in Touch</h2>
-            <p>Feel free to reach out via email at <a href="mailto:alex@example.com">alex@example.com</a> or find me on GitHub.</p>
-        </section>
-    </main>
+    .nav-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
 
-    <footer>
-        <p>&copy; 2026 Alex Developer. Built with HTML5.</p>
-    </footer>
+    .logo-text {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--primary-blue);
+      letter-spacing: 2px;
+    }
 
-</body>
-</html>
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+      align-items: center;
+    }
+
+    .nav-links a {
+      font-weight: 500;
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--accent-coral);
+    }
+
+    /* --- Buttons --- */
+    .btn {
+      display: inline-block;
+      padding: 0.75rem 1.75rem;
+      font-family: var(--font-heading);
+      font-size: 1.1rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.2s ease, transform 0.1s ease;
+    }
+
+    .btn-primary {
+      background-color: var(--accent-coral);
+      color: var(--white);
+      border: none;
+    }
+
+    .btn-primary:hover {
+      background-color: #e55a3d;
+      color: var(--white);
+    }
+
+    /* --- Hero Section --- */
+    .hero {
+      background: linear-gradient(135deg, var(--white) 60%, var(--soft-peach) 100%);
+      padding: 6rem 2rem;
+      text-align: center;
+    }
+
+    .hero-content {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .hero h1 {
+      font-size: 3.5rem;
+      color: var(--primary-blue);
+      line-height: 1.1;
+      margin-bottom: 1rem;
+    }
+
+    .hero p.tagline {
+      font-size: 1.5rem;
+      color: var(--accent-coral);
+      font-weight: 600;
+      margin-bottom: 2rem;
+    }
+
+    /* --- General Section Layout --- */
+    .section {
+      padding: 5rem 2rem;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .section-title {
+      font-size: 2.2rem;
+      color: var(--primary-blue);
+      text-align: center;
+      margin-bottom: 2rem;
+      position: relative;
+    }
+
+    .section-title::after {
+      content: '';
+      display: block;
+      width: 50px;
+      height: 3px;
+      background-color: var(--accent-coral);
+      margin: 0.5rem auto 0;
+    }
+
+    /* --- About Section --- */
+    .about-text {
+      font-size: 1.1rem;
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    /* --- Founders Section --- */
+    .founders-grid {
+      display: flex;
+      gap: 2rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 2.5rem;
+    }
+
+    .founder-card {
+      flex: 1;
+      min-width: 280px;
+      max-width: 400px;
+      background: var(--light-gray);
+      padding: 2.5rem 2rem;
+      border-radius: 8px;
+      text-align: center;
+      border: 1px solid #EAEAEA;
+    }
+
+    .founder-photo {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      object-fit: cover;
+      background-color: var(--soft-peach);
+      margin: 0 auto 1.5rem;
+      display: block;
+      border: 3px solid var(--primary-blue);
+    }
+
+    .founder-title {
+      color: var(--accent-coral);
+      font-weight: 600;
+      margin-bottom: 1rem;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* --- Information / What You Need Section --- */
+    .info-section {
+      background-color: var(--light-gray);
+      border-top: 1px solid #E5E5E5;
+    }
+
+    .info-card {
+      background: var(--white);
+      border-left: 5px solid var(--primary-blue);
+      padding: 2.5rem;
+      margin: 2rem auto 0;
+      max-width: 700px;
+      border-radius: 4px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    }
+
+    .checklist-ol {
+      margin-left: 1.5rem;
+      margin-top: 1.5rem;
+      font-size: 1.1rem;
+    }
+
+    .checklist-ol li {
+      margin-bottom: 1rem;
+      padding-left: 0.5rem;
+    }
+
+    /* --- Survey / Get Started Section --- */
+    .survey-section {
+      border-top: 1px solid #E5E5E5;
+      border-bottom: 1px solid #E5E5E5;
+    }
